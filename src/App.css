@@ -1,38 +1,184 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  line-height: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+.stars,
+.twinkling,
+.clouds {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.stars {
+  z-index: 0;
+  background: #000 url("https://image.ibb.co/mjnygo/stars.png") repeat top center;
+}
+
+.twinkling {
+  z-index: 1;
+  background: transparent url("https://image.ibb.co/ir1DE8/twinkling.png") repeat top center;
+  animation: move-twink-back 200s linear infinite;
+}
+
+.clouds {
+  z-index: 2;
+  background: transparent url("https://image.ibb.co/bT4N7T/clouds.png") repeat top center;
+  animation: move-clouds-back 200s linear infinite;
+}
+
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+
+
+.signUpContainer {
+  width: 100%;
+  position: absolute;
+  z-index: 99;
+  color: white;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.signUp {
+  padding: 40px 20px;
+  margin: 15px;
+  border: solid 3px white;
+  max-width: 500px;
+  width: 100%;
+}
+
+.signUp h1 {
+  font-size: 3em;
+  font-weight: bold;
+  border-bottom: solid 3px #41E796;
+  padding-bottom: 20px;
+  width: 50%;
+}
+
+.inputContainer {
+  position: relative;
+  padding: 10px 0;
+}
+
+.iconPosition {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+
+.signUp form {
+  padding: 50px 0 10px 0;
+}
+
+.inputContainer .formInput {
+  background: transparent;
+  border-bottom: solid 3px rgba(255,255,255,.3);
+  width: 80%;
+  font-size: 1.5em;
+  padding-left: 50px;
+  padding-bottom: 15px;
+  outline: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.submitBtn {
+  border: solid 3px white;
+  color: white;
+  margin: 10px 0;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+  padding: 10px;
+  margin-top: 40px;
+  background-color: transparent;
+  font-size: 1.3em;
+} 
+
+.submitBtn:hover {
+  border: solid 3px #41E796;
+  color: #41E796;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.formInput:focus {
+  border-bottom: solid 3px #41E796;
+}
+
+.statusMessage {
+  padding: 15px;
+  border: solid 3px #41E796;
+  margin: 35pxx 0 0 0;
+  margin-top: 35px;
+  color: #41E796;
+}
+
+.error {
+  color: red !important;
+  border: solid 3px red !important;
+}
+
+.d-none {
+  display: none;
 }
